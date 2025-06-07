@@ -1,12 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Loja</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    
+
+    <header id="menu_bar">
+        <div class="titulo-container">
+            <h1>The Last of Task</h1>
+            <img src="{{ url_for('static', filename='imagens/cipo2.png') }}" alt="folhagem" class="cipo-decorativo1">
+        </div>
+
+        <div id="menu_bar2">
+            <h3 id="menu-l-1"><a href="{{url_for('loja')}}">Loja</a></h3>
+            <h3 id="menu-l-2"><a href="{{url_for('status')}}">Perfil</a></h3>
+            <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
+        </div>
+    </header>
+    <main>
+
+
+
+    </main>
+    <footer>
+
+    </footer>
+
 </body>
 </html>
