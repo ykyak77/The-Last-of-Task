@@ -16,12 +16,14 @@ class User(Base):
     username = Column(String(50), unique=True, nullable=False) #coluna para nome do usuário, string, única e obrigatória
     email = Column(String(100), unique=True, nullable=False) #coluna para email, única e obrigatória
     senha = Column(String(255), nullable=False) #coluna para senha, string e obrigatória
-    xp_atual = Column(Integer, default=0)#coluna para pontos XP, com valor padrão zero
+    pilulas = Column(Integer, default=0)#coluna para pontos XP, com valor padrão zero
 
     # Relacionamento 1-1 com personagem
     personagem = relationship('Personagem', back_populates='user', uselist=False)
     # Relacionamento 1-N com user_tasks
-    tasks = relationship('UserTasks', back_populates='user')
+    user_tasks  = relationship('UserTasks', back_populates='user')
+    # Relacionamento 1-N com tasks
+    tasks = relationship('Task', back_populates='user')
     # Relacionamento 1-N com inventario
     inventario = relationship('Inventario', back_populates='user')
 
@@ -44,27 +46,26 @@ class Task(Base):
     __tablename__ = 'task'
 
     task_id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('user.user_id'), nullable=False)
     titulo = Column(String(100), nullable=False)
-    xp_recompensa = Column(Integer, nullable=False)
-    ativo = Column(Boolean, default=True) #ondica se tarefa está ativa, padrão True (sim)
-    hr_criada = Column(DateTime, default=func.now())
-    hr_realizada = Column(DateTime, default=func.now(), onupdate=func.now())
+    pilulas_recompensa = Column(Integer, nullable=False)
+    concluido = Column(Boolean, default=False)
 
+    user = relationship('User', back_populates='tasks')
     user_tasks = relationship('UserTasks', back_populates='task')
 
 
 class UserTasks(Base):
     __tablename__ = 'user_tasks'
     __table_args__ = (UniqueConstraint('user_id', 'task_id', 'data_execucao', name='unique_task_execution'),)
-    # Restrição para evitar repetição da mesma tarefa para o mesmo usuário na mesma data
 
     user_task_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.user_id'), nullable=False)
     task_id = Column(Integer, ForeignKey('task.task_id'), nullable=False)
     data_execucao = Column(DateTime, default=func.current_date())
-    xp_ganho = Column(Integer, nullable=False)
+    pilulas_ganhas = Column(Integer, nullable=False)
 
-    user = relationship('User', back_populates='tasks')
+    user = relationship('User', back_populates='user_tasks')
     task = relationship('Task', back_populates='user_tasks')
 
 
@@ -74,17 +75,17 @@ class ShopItems(Base):
     item_id = Column(Integer, primary_key=True, autoincrement=True)
     item = Column(String(100), nullable=False)
     descricao = Column(Text)
-    preco_xp = Column(Integer, nullable=False)
+    preco_pilulas = Column(Integer, nullable=False)
 
     inventario = relationship('Inventario', back_populates='item')
 
 
 class Inventario(Base):
     __tablename__ = 'inventario'
-    inventory_id = Column(Integer, primary_key=True, autoincrement=True)
+    inventario_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.user_id'), nullable=False)
     item_id = Column(Integer, ForeignKey('shop_items.item_id'), nullable=False)
-    quantity = Column(Integer, default=1)
+    quantidade = Column(Integer, default=1)
 
 
     user = relationship('User', back_populates='inventario')
