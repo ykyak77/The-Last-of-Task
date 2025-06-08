@@ -148,3 +148,48 @@
 #menu_bar h3{
     margin-left: 3vw;
 }
+ /*will*/
+#body_perfil{
+background-image: url(/static/imagens/fundoPerfil.jpg);
+background-color: #1a1a1a;
+color: #f0f0f0;
+font-family: 'Segoe UI', sans-serif;
+}
+
+.perfil-container{
+    max-width: 600px;
+    margin: 80px auto;
+    background-color:  rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius:  10px;
+    box-shadow: 0 0 15px black;
+}
+
+.perfil-container{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.atributo{
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin: 25px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+.atributo button{
+padding: 5px 10px;
+border: none;
+background-color: #555;
+color: white;
+border-radius: 4px;
+cursor: pointer;
+margin-bottom: 30px;
+}
+
+.atributo button:hover{
+    background-color: #777;
+}
+
