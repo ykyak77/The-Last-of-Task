@@ -38,6 +38,7 @@ class Personagem(Base):
     inteligencia = Column(Integer, default=0)
     criatividade = Column(Integer, default=0)
     energia = Column(Integer, default=0)
+    preco = Column(Integer, default=150)
 
     user = relationship("User", back_populates="personagem")
 

@@ -20,4 +20,4 @@ def select(model):
 
 
 if __name__ == '__main__':
-    select(Task)
+    select(UserTasks)

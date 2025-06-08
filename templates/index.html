@@ -35,7 +35,7 @@
         <ul>
             {% for tarefa in tarefas %}
                 <li>
-                    <strong>{{ tarefa.titulo }}</strong> - | {{ tarefa.pilulas_recompensa }} pilulas |
+                    <strong>{{ tarefa.titulo }}</strong> | {{ tarefa.pilulas_recompensa }} pilulas |
                     {% if tarefa.concluido %}
                         <span style="color:green;">[Concluído]</span>
                     {% else %}
@@ -47,9 +47,13 @@
 
                 </li>
             {% else %}
-                <li>Nenhuma tarefa encontrada.</li>
+                <h1>Por favor, reponda o formulario para que possamos oderecer a melhor rotina possivel para voce</h1>
+                 <h3><a href="{{url_for('coletarDados')}}">Coleta de dados</a></h3>
+
             {% endfor %}
         </ul>
+
+        <h1>Total de pilulas: {{ pilulas_totais  }} 💊</h1>
 
     </main>
     <footer>

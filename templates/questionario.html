@@ -1,0 +1,52 @@
+<form action="{{ url_for('coletarDados') }}" method="post">
+
+    <label>Idade:
+        <input type="number" id="idade" name="idade" min="0" required>
+    </label>
+
+    <label>Hora que você acorda (0-23):
+        <input type="number" id="acorda" name="acorda" min="0" max="23" required>
+    </label>
+
+    <label>Hora que você dorme (0-23):
+        <input type="number" id="dorme" name="dorme" min="0" max="23" required>
+    </label>
+
+    <label>Principais objetivos (marque um ou mais):</label>
+    <div>
+        <label>
+            <input type="checkbox" name="objetivo" value="reduzir estresse">
+            Reduzir estresse
+        </label><br>
+        <label>
+            <input type="checkbox" name="objetivo" value="melhorar sono">
+            Melhorar sono
+        </label><br>
+        <label>
+            <input type="checkbox" name="objetivo" value="ter mais energia">
+            Ter mais energia
+        </label><br>
+        <label>
+            <input type="checkbox" name="objetivo" value="parar de procrastinar">
+            Parar de procrastinar
+        </label>
+    </div>
+
+    <label>Você pratica exercícios regularmente?
+        <select id="exercicio" name="exercicio" required>
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+        </select>
+    </label>
+
+    <button type="submit">Gerar Rotina</button>
+
+        {% set mensagens = get_flashed_messages() %}
+            {% if mensagens %}
+                {% for msg in mensagens %}
+                    {{ msg }}
+                {% endfor %}
+        {% endif %}
+
+
+</form>

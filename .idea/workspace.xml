@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="acao de logar e cadastrar usuario feitas, mas ainda sem testes">
-      <change afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
+    <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las">
+      <change afterPath="$PROJECT_DIR$/templates/questionario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bdprojeto.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banco_de_dados/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banco_de_dados/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.app.executor": "Run",
     "Python.models.executor": "Run",
@@ -88,11 +87,20 @@
       <option name="project" value="LOCAL" />
       <updated>1749328048157</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las">
+      <option name="closed" value="true" />
+      <created>1749486590642</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749486590643</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="acao de logar e cadastrar usuario feitas, mas ainda sem testes" />
-    <option name="LAST_COMMIT_MESSAGE" value="acao de logar e cadastrar usuario feitas, mas ainda sem testes" />
+    <MESSAGE value="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las" />
   </component>
 </project>
