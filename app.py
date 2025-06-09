@@ -4,11 +4,11 @@ from datetime import datetime
 
 from sqlalchemy.testing.suite.test_reflection import users
 from werkzeug.security import generate_password_hash, check_password_hash
-from banco_de_dados.models import engine, Base, User, Task, UserTasks
+from banco_de_dados.models import engine, Base, User, Task, UserTasks, ShopItens, Inventario
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import IntegrityError
 from functools import wraps
-from banco_de_dados.services import criarTasks, criarPersonagem, reiniciarTask
+from banco_de_dados.services import criarTasks, criarPersonagem, reiniciarTask, criarItens
 
 
 app = Flask(__name__)
@@ -16,7 +16,11 @@ app.secret_key = "the_last_of_task"
 
 #configurando sessao do SqlAlchemy
 DB_Session = sessionmaker(bind=engine)
-Base.metadata.create_all(engine) # criar tabelas se não existirem
+
+def iniciar_banco():
+    Base.metadata.create_all(engine) # criar tabelas se não existirem
+    criarItens()
+
 
 # Decorador para proteger rotas
 def login_required(f): #recebe outra funcao como parametro, por exemplo a rota index
@@ -181,7 +185,66 @@ def status():
 @app.route('/loja')
 @login_required
 def loja():
-    return render_template('loja.html')
+    db_session = DB_Session()
+    user_id = session['user_id']
+    try:
+        itensComprados = db_session.query(Inventario.item_id).filter_by(user_id=user_id)
+        itens = db_session.query(ShopItens).filter(~ShopItens.item_id.in_(itensComprados)).all()
+        user = db_session.query(User).get(user_id)
+    except:
+        flash("Erro ao encontar itens na loja")
+        return render_template('loja.html')
+    finally:
+        db_session.close()
+
+    return render_template('loja.html', itens=itens, user=user)
+
+
+@app.route('/comprar_item/<int:item_id>', methods=['POST'])
+@login_required
+def comprarItem(item_id):
+    db_session = DB_Session()
+    try:
+        user_id = session['user_id']
+        item = db_session.query(ShopItens).get(item_id)
+        user = db_session.query(User).get(user_id)
+
+        if user.pilulas < item.preco_pilulas:
+            return "Saldo insuficiente"  # ou redirecionar com flash
+
+        if item:
+            inventerio = Inventario(user_id=user_id,item_id=item_id, comprado=True)
+            db_session.add(inventerio)
+
+            user.pilulas -= item.preco_pilulas
+
+            db_session.commit()
+    except Exception as e:
+        db_session.rollback()
+        print(f"Erro ao realizar tarefas: {e}")
+    finally:
+        db_session.close()
+    return redirect(url_for('loja'))  # ou render_template
+
+
+@app.route('/inventario')
+@login_required
+def inventario():
+    db_session = DB_Session()
+    user_id = session['user_id']
+
+    try:
+        itensComprados = db_session.query(Inventario.item_id).filter_by(user_id=user_id)
+        itens = db_session.query(ShopItens).filter(ShopItens.item_id.in_(itensComprados)).all()
+    except Exception as e:
+        flash("Erro ao encontar itens na loja")
+        return render_template('inventario.html')
+    finally:
+        db_session.close()
+
+    return render_template('inventario.html', itens=itens)
+
 
 if __name__ == '__main__':
+    iniciar_banco()
     app.run(debug=True)
