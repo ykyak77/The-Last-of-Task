@@ -1,10 +1,10 @@
 from sqlalchemy import (
-    create_engine, Column, Integer, String, ForeignKey, Boolean, DateTime, Text, UniqueConstraint, func
+    create_engine, Column, Integer, String, ForeignKey, Boolean, Date, DateTime, Text, UniqueConstraint, func
 ) #importa funções e classes do SQLAlchemy para criação do banco e definição das colunas e tipos.
 
 from sqlalchemy.orm import declarative_base #importa função para criar uma classe base para as classes-modelo do banco.
 from sqlalchemy.orm import sessionmaker, relationship # importa para criar sessão de conexão e para definir relacionamentos entre tabelas.
-
+from datetime import date
 # Configuração do banco SQLite
 engine = create_engine('sqlite:///bdprojeto.db', echo=True)
 Base = declarative_base() #cria uma classe base para todos os modelos/tabelas herdarem e serem mapeados pelo SQLAlchemy.
@@ -90,6 +90,12 @@ class Inventario(Base):
 
     user = relationship('User', back_populates='inventario')
     item = relationship('ShopItems', back_populates='inventario')
+
+
+class ControleReset(Base):
+    __tablename__ = 'controle_reset'
+    id = Column(Integer, primary_key=True)
+    data_ultima_reset = Column(Date, nullable=False, default=date.today)
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine) #cria o banco de dados

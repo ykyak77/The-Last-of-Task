@@ -1,10 +1,12 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from sqlalchemy.sql.visitors import replacement_traverse
 from werkzeug.security import generate_password_hash, check_password_hash
-from app.models import engine, Base, User
+from banco_de_dados.models import engine, Base, User, Task
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import IntegrityError
 from functools import wraps
+from banco_de_dados.services import criarTasks, criarPersonagem, reiniciarTask
+
 
 app = Flask(__name__)
 app.secret_key = "the_last_of_task"
@@ -27,7 +29,7 @@ def login_required(f): #recebe outra funcao como parametro, por exemplo a rota i
 def login():
     return render_template('login.html')
 
-@app.route('/cadastro', methods=['GET', 'POST'])
+@app.route('/cadastro', methods=['GET','POST'])
 def cadastrar():
     if request.method == 'POST':
         username = request.form.get('username')
@@ -37,11 +39,11 @@ def cadastrar():
 
         if not username or not email or not senha:
             flash('Campo vazio, por favor preencha-o')
-            return redirect(url_for('cadastrar'))
+            return render_template('cadastro.html', username=username, email=email)
 
         if senha != senhaConfir:
             flash('Senhas não coincidem! Tente novamente')
-            return  redirect(url_for('cadastrar'))
+            return render_template('cadastro.html', username=username, email=email)
 
         senhaHash = generate_password_hash(senha)
 
@@ -53,12 +55,13 @@ def cadastrar():
             db_session.add(newUser)
             db_session.commit()
             session['user_id'] = newUser.user_id
-            flash("Seja bem vindo " + username)
-            return redirect(url_for('index'))
+            criarTasks(newUser.user_id)
+            criarPersonagem(newUser.user_id)
+            return redirect(url_for('menu'))
         except IntegrityError:
             db_session.rollback()
             flash('Nome do Usuario ou email ja existe')
-            return redirect(url_for('cadastrar'))
+            return render_template(url_for('cadastrar'))
         finally:
             db_session.close()
 
@@ -72,7 +75,7 @@ def logar():
 
         if not email or not senha:
             flash("Preencha usuário e senha!")
-            return redirect(url_for('login'))
+            return render_template('login.html', email=email)
 
         db_session = DB_Session()
 
@@ -80,19 +83,41 @@ def logar():
         db_session.close()
 
         if user and check_password_hash(user.senha, senha):
-            session['id_user'] = user.user_id
-            flash("Seja bem vindo " + user.username)
-            return redirect('index')
+            session['user_id'] = user.user_id
+            return redirect(url_for('menu'))
         else:
             flash("Erro! Email ou senha incorretos")
-            return  redirect('login')
+            return render_template('login.html', email=email)
 
     return redirect(url_for('menu'))
 
 @app.route('/index')
 @login_required
 def menu():
-    return render_template('index.html')
+    reiniciarTask()
+
+    db_session = DB_Session()
+    try:
+        tasks = db_session.query(Task).all()
+        # tasks = db_session.query(Task).filter(Task.concluido.is_(True)).all() #exibe somente se a tarefa nao foi executada
+    finally:
+        db_session.close()
+
+    return render_template('index.html', tarefas=tasks)
+
+@app.route('/concluir_tarefa/<int:task_id>', methods=['POST'])
+@login_required
+def concluirTarefa(task_id):
+    db_session = DB_Session()
+    try:
+        tarefa = db_session.query(Task).get(task_id)
+        if tarefa and tarefa.user.user_id == session['user_id']:
+            tarefa.concluido = True
+            db_session.commit()
+    finally:
+        db_session.close()
+
+    return redirect(url_for('menu'))
 
 @app.route('/perfil')
 @login_required

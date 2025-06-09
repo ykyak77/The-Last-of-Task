@@ -11,24 +11,36 @@
     <div id="fundo"></div>
 
     <div id="div_placa">
-        <form action="{{ url_for('logar')}}" method="post">
+        <form action="{{ url_for('cadastrar')}}" method="post">
             <h1>Cadastro</h1>
 
-            <label for="">Nome:</label>
-            <input type="text" id="">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" name="username" value="{{ username or '' }}">
 
-            <label for="">E-mail:</label>
-            <input type="text" id="">
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" name="email" value="{{ email or '' }}">
 
-            <label for="">Senha:</label>
-            <input type="text" id="">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
 
-            <label for="">Confirmar senha:</label>
-            <input type="text" id="">
+            <label for="senhaConfirma">Confirmar senha:</label>
+            <input type="password" id="senhaConfirma" name="senhaConfirma">
 
             <button type="submit">Cadastrar</button>
         </form>
+
+        <!--Cria uma variável temporária chamada "mensagens" que recebe as mensagens enviadas com flash() no backend #-->
+        {% with mensagens = get_flashed_messages() %}
+            {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
+                {% for msg in mensagens %}
+                    {{ msg }}
+                {% endfor %}
+                {% endif %}
+        {% endwith %}
+
     </div>
+
+
 
     <div id="suporte"></div>
     <div id="cipo"></div>
