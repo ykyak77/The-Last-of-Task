@@ -148,48 +148,61 @@
 #menu_bar h3{
     margin-left: 3vw;
 }
- /*will*/
+/*will*/
 #body_perfil{
-background-image: url(/static/imagens/fundoPerfil.jpg);
-background-color: #1a1a1a;
-color: #f0f0f0;
-font-family: 'Segoe UI', sans-serif;
+    background-image: url(/static/imagens/perfil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
 }
-
-.perfil-container{
-    max-width: 600px;
-    margin: 80px auto;
-    background-color:  rgba(0,0,0,0.6);
-    padding: 30px;
-    border-radius:  10px;
-    box-shadow: 0 0 15px black;
-}
-
 .perfil-container{
     text-align: center;
     margin-bottom: 30px;
+    max-width: 600px;
+    margin: 80px auto;
+    background-color:  rgba(0,0,0,0.6);
+    padding: 50px 60px 400px 30px;
+    border-radius:  10px;
+    box-shadow: 0 0 15px black;
+
 }
 
-.atributo{
+.per_left{
+    float: left;
+    height: 40%;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.per_rigth{
+    float: right;
+    height: 40%;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.atributo {
     display: flex;
-    justify-content:  space-between;
+    justify-content: space-between;
     align-items: center;
-    margin: 25px 0;
+    margin: 25px 0px;
     padding: 10px;
     background-color: #333;
-    border-radius: 5px;
-}
-.atributo button{
-padding: 5px 10px;
-border: none;
-background-color: #555;
-color: white;
-border-radius: 4px;
-cursor: pointer;
-margin-bottom: 30px;
+    border-radius: 90px;
+
 }
 
-.atributo button:hover{
-    background-color: #777;
+.atributo span {
+    flex-grow: 1;
+    color: white;
+
+
 }
 
