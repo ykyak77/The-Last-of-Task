@@ -11,26 +11,33 @@
     <div id="fundo"></div>
 
     <div id="div_placa">
-        <form action="{{ url_for('logar')}}" method="post">
+        <form id="f_conta" action="{{ url_for('logar')}}" method="post">
             <h1>Login</h1>
 
-            <label for="email">E-mail:</label>
-            <input type="text" id="email" name="email" value="{{ email or '' }}">
+            <div>
+                <input type="text" id="email" name="email" value="{{ email or '' }}" placeholder="E-mail">
+            </div>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" value="{{ senha or '' }}">
+            <div>
+                <input type="password" id="senha" name="senha" value="{{ senha or '' }}" placeholder="Password">
+            </div>
 
             <button type="submit">Logar</button>
             <a href="{{ url_for('cadastrar') }}">Criar uma conta</a>
         </form>
-        {% with mensagens = get_flashed_messages() %}
-            {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
-                {% for msg in mensagens %}
-                    {{ msg }}
-                {% endfor %}
-                {% endif %}
-        {% endwith %}
 
+        <div>
+            <p>
+                {% with mensagens = get_flashed_messages() %}
+                    {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
+                        {% for msg in mensagens %}
+                            {{ msg }}
+                        {% endfor %}
+                        {% endif %}
+                {% endwith %}
+            </p>
+        </div>
+        
     </div>
 
     <div id="suporte"></div>

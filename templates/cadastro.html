@@ -11,33 +11,41 @@
     <div id="fundo"></div>
 
     <div id="div_placa">
-        <form action="{{ url_for('cadastrar')}}" method="post">
+        <form id="f_conta" action="{{ url_for('cadastrar')}}" method="post">
             <h1>Cadastro</h1>
 
-            <label for="username">Nome:</label>
-            <input type="text" id="username" name="username" value="{{ username or '' }}">
+            <div>
+                <input type="text" id="username" name="username" value="{{ username or '' }}" placeholder="Username">
+            </div>
 
-            <label for="email">E-mail:</label>
-            <input type="text" id="email" name="email" value="{{ email or '' }}">
+            <div>
+                <input type="text" id="email" name="email" value="{{ email or '' }}"  placeholder="E-mail">
+            </div>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
+            <div>
+                <input type="password" id="senha" name="senha"  placeholder="Password">
+            </div>
 
-            <label for="senhaConfirma">Confirmar senha:</label>
-            <input type="password" id="senhaConfirma" name="senhaConfirma">
+            <div>
+                <input type="password" id="senhaConfirma" name="senhaConfirma"  placeholder="Confirm Password">
+            </div>
 
             <button type="submit">Cadastrar</button>
         </form>
 
-        <!--Cria uma variável temporária chamada "mensagens" que recebe as mensagens enviadas com flash() no backend #-->
-        {% with mensagens = get_flashed_messages() %}
-            {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
-                {% for msg in mensagens %}
-                    {{ msg }}
-                {% endfor %}
-                {% endif %}
-        {% endwith %}
-
+        <div>
+            <p>
+                <!--Cria uma variável temporária chamada "mensagens" que recebe as mensagens enviadas com flash() no backend #-->
+                {% with mensagens = get_flashed_messages() %}
+                    {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
+                        {% for msg in mensagens %}
+                            {{ msg }}
+                        {% endfor %}
+                        {% endif %}
+                {% endwith %}
+            </p>
+        </div>
+        
     </div>
 
 

@@ -20,41 +20,36 @@
             <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
         </div>
     </header>
-    <main>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1>Minhas Tarefas</h1>
-        <ul>
-            {% for tarefa in tarefas %}
-                <li>
-                    <strong>{{ tarefa.titulo }}</strong> | {{ tarefa.pilulas_recompensa }} pilulas |
-                    {% if tarefa.concluido %}
-                        <span style="color:green;">[Concluído]</span>
+    <main id="main_conteiner">
+
+        <div id="saldo">
+            <h1>Total de pilulas: {{ pilulas_totais  }} 💊</h1>
+        </div>
+
+        <div id="d_tarefas">
+            <h1>Minhas Tarefas</h1>
+                <ul id="ul_tarefas">
+                    {% for tarefa in tarefas %}
+                        <li id="li_tarefas">
+                            <strong>{{ tarefa.titulo }}</strong> 
+                            <strong>| {{ tarefa.pilulas_recompensa }} pilulas |</strong>
+                            {% if tarefa.concluido %}
+                                <span style="color:green;">[Concluído]</span>
+                            {% else %}
+                                <form action="{{ url_for('concluirTarefa', task_id=tarefa.task_id) }}" method="post" style="display:inline;">
+                                    <button style="color:red;" type="submit">Finalizar Tarefa</button>
+                                </form>
+                            {% endif %}
+
+                        </li>
                     {% else %}
-                        <span style="color:red;">[Pendente]</span>
-                        <form action="{{ url_for('concluirTarefa', task_id=tarefa.task_id) }}" method="post" style="display:inline;">
-                            <button type="submit">Finalizar Tarefa</button>
-                        </form>
-                    {% endif %}
+                        <h1>Por favor, reponda o formulario para que possamos oderecer a melhor rotina possivel para voce</h1>
+                        <h3><a href="{{url_for('coletarDados')}}">Coleta de dados</a></h3>
 
-                </li>
-            {% else %}
-                <h1>Por favor, reponda o formulario para que possamos oderecer a melhor rotina possivel para voce</h1>
-                 <h3><a href="{{url_for('coletarDados')}}">Coleta de dados</a></h3>
+                    {% endfor %}
+                </ul>
 
-            {% endfor %}
-        </ul>
-
-        <h1>Total de pilulas: {{ pilulas_totais  }} 💊</h1>
-
+        </div>
     </main>
     <footer>
 
