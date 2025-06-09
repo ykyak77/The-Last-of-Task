@@ -1,4 +1,4 @@
-from banco_de_dados.models import engine, Task, Personagem, ControleReset
+from banco_de_dados.models import engine, Task, Personagem, ControleReset, ShopItens
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime, date
 
@@ -94,5 +94,27 @@ def criarPersonagem(id):
         db_session.commit()
     except Exception as e:
         print(f"Erro ao criar o personagem {e}")
+    finally:
+        db_session.close()
+
+
+def criarItens():
+    db_session = DB_Session()
+
+    if db_session.query(ShopItens).first():
+        db_session.close()
+        return  # Já existem itens, então não insere de novo
+
+    itens = [
+        ShopItens(item="martelo", nome="Martelo", descricao="MArtelo muito legal", preco_pilulas=150),
+        ShopItens(item="betoneira", nome="Betoneira", descricao="Betinho que bate massa", preco_pilulas=250),
+        ShopItens(item="macarrao", nome="Macarao", descricao="Comida Gostosa", preco_pilulas=50)
+    ]
+
+    try:
+        db_session.add_all(itens)
+        db_session.commit()
+    except Exception as e:
+        print(e)
     finally:
         db_session.close()

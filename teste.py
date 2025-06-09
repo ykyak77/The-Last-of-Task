@@ -1,4 +1,4 @@
-from banco_de_dados.models import engine, Task, User, UserTasks, ShopItems, Personagem
+from banco_de_dados.models import engine, Task, User, UserTasks, ShopItens, Personagem, Inventario
 from sqlalchemy.orm import sessionmaker
 
 DB_Session = sessionmaker(bind=engine)
@@ -20,4 +20,4 @@ def select(model):
 
 
 if __name__ == '__main__':
-    select(UserTasks)
+    select(Inventario)

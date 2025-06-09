@@ -70,11 +70,12 @@ class UserTasks(Base):
     task = relationship('Task', back_populates='user_tasks')
 
 
-class ShopItems(Base):
-    __tablename__ = 'shop_items'
+class ShopItens(Base):
+    __tablename__ = 'shop_itens'
 
     item_id = Column(Integer, primary_key=True, autoincrement=True)
     item = Column(String(100), nullable=False)
+    nome = Column(String(100), nullable=False)
     descricao = Column(Text)
     preco_pilulas = Column(Integer, nullable=False)
 
@@ -85,18 +86,18 @@ class Inventario(Base):
     __tablename__ = 'inventario'
     inventario_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('user.user_id'), nullable=False)
-    item_id = Column(Integer, ForeignKey('shop_items.item_id'), nullable=False)
-    quantidade = Column(Integer, default=1)
-
+    item_id = Column(Integer, ForeignKey('shop_itens.item_id'), nullable=False)
+    comprado = Column(Boolean, default=True)
 
     user = relationship('User', back_populates='inventario')
-    item = relationship('ShopItems', back_populates='inventario')
+    item = relationship('ShopItens', back_populates='inventario')
 
 
 class ControleReset(Base):
     __tablename__ = 'controle_reset'
     id = Column(Integer, primary_key=True)
     data_ultima_reset = Column(Date, nullable=False, default=date.today)
+
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine) #cria o banco de dados
