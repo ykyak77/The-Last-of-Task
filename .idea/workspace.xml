@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las">
-      <change afterPath="$PROJECT_DIR$/templates/questionario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_de_dados/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_de_dados/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
-    </list>
+    <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +51,7 @@
     "Python.teste.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "C:/Users/José Ângelo/Desktop/Programas PyCharm/projetos"
   }
 }]]></component>
