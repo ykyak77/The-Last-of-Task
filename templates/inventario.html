@@ -27,11 +27,14 @@
             <table>
             {% for item in itens %}
                   <tr>
-                    <td><img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.item}}" width="100" height="100"></td>
+                    <td><img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.nome}}" width="100" height="100"></td>
                     <td><b>{{item.nome}}</b></td>
                      <td>{{item.descricao}}</td>
                     <td>💊 {{item.preco_pilulas}}</td>
                   </tr>
+                {% else %}
+                        <h1>Inventário vazio</h1>
+                        <h3><a href="{{url_for('loja')}}">Ir para a loja</a></h3>
             {% endfor %}
             </table>
         </div>
