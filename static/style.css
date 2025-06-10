@@ -76,11 +76,7 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
-<<<<<<< HEAD
-    padding-left: 40px;
-=======
     padding-left: 40px; 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -95,11 +91,7 @@
     background-position: -10px center;
     background-repeat: no-repeat;
     background-size: 60px 40px;
-<<<<<<< HEAD
-    padding-left: 40px;
-=======
     padding-left: 40px; 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -114,11 +106,7 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
-<<<<<<< HEAD
-    padding-left: 40px;
-=======
     padding-left: 40px; 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -133,11 +121,7 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
-<<<<<<< HEAD
-    padding-left: 40px;
-=======
     padding-left: 40px; 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -214,11 +198,7 @@
 
 .titulo-container {
     position: relative;
-<<<<<<< HEAD
-    display: inline-block;
-=======
     display: inline-block; 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
 }
 
 .titulo-container h1 {
@@ -338,14 +318,7 @@
 /* INDEX/TASK */
 /* PERFIL/STATUS */
 #body_perfil{
-<<<<<<< HEAD
-    background-image: url(/static/imagens/perfilFundo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-=======
     background-image: url(/static/imagens/fundoPerfil.jpg);
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     background-color: #1a1a1a;
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
@@ -353,10 +326,7 @@
 
 .perfil-container{
     text-align: center;
-<<<<<<< HEAD
-=======
     margin-bottom: 30px;
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     max-width: 600px;
     margin: 80px auto;
     background-color:  rgba(0,0,0,0.6);
@@ -365,18 +335,6 @@
     box-shadow: 0 0 15px black;
 }
 
-<<<<<<< HEAD
-.perfil-container2{
-    text-align: center;
-    max-width: 600px;
-    margin: 10px auto;
-    background-color:  rgba(0,0,0,0.6);
-    border-radius:  10px;
-    box-shadow: 0 0 15px black;
-}
-
-=======
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
 .per_left{
     float: left;
     height: 40%;
@@ -393,11 +351,7 @@
     margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
-.atributo {
-=======
 .atributo{
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     display: flex;
     justify-content:  space-between;
     align-items: center;
@@ -407,96 +361,6 @@
     border-radius: 5px;
 }
 
-<<<<<<< HEAD
-.atributo button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #555;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.atributo button:hover {
-  background-color: #777;
-}
-
-
-#body_questionario{
-    background-image: url(/static/imagens/perfilFundo.png);
-    background-size: cover;            /* Faz a imagem cobrir toda a tela */
-    background-position: center;       /* Centraliza a imagem */
-    background-repeat: no-repeat;      /* Evita repetição da imagem */
-    background-attachment: fixed;      /* Mantém a imagem fixa ao rolar a página */
-    height: 100vh;                     /* Garante que o corpo tenha altura da tela */
-    margin: 0;                         /* Remove margens padrão */
-    padding: 0;
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
-    padding: 40px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 450px;
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 25px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Espaçamento entre elementos do formulário */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-questionario input,
-.form-questionario select {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 8px;
-}
-
-.checkbox-group label {
-    display: block;
-    margin-top: 8px;
-}
-
-/* Botão */
-button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Mensagens */
-.mensagens p {
-    color: #ffcc00;
-    margin-top: 15px;
-    text-align: center;
-}
-
-
-
-
-
-
-=======
 .atributo button{
 padding: 5px 10px;
 border: none;
@@ -510,4 +374,3 @@ cursor: pointer;
     background-color: #777;
 }
 
->>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
