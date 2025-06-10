@@ -56,7 +56,7 @@ def cadastrar():
 
         db_session = DB_Session()
 
-        newUser = User(username=username, email=email, senha=senhaHash, pilulas=1000)
+        newUser = User(username=username, email=email, senha=senhaHash)
 
         try:
             db_session.add(newUser)
