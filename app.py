@@ -56,7 +56,7 @@ def cadastrar():
 
         db_session = DB_Session()
 
-        newUser = User(username=username, email=email, senha=senhaHash)
+        newUser = User(username=username, email=email, senha=senhaHash, pilulas=1000)
 
         try:
             db_session.add(newUser)
@@ -91,6 +91,9 @@ def logar():
         if user and check_password_hash(user.senha, senha):
             session['user_id'] = user.user_id
             return redirect(url_for('menu'))
+        elif not user:
+            flash("Usuario não existe")
+            return render_template('login.html', email=email)
         else:
             flash("Erro! Email ou senha incorretos")
             return render_template('login.html', email=email)

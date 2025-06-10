@@ -76,33 +76,6 @@
             </div>
         </div>
 
-        <script>
-            function aumentar(atributo){
-                fetch("/atualizar_atributo",{
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({atributo: atributo})
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.sucesso){
-                        alert("Atributo " + atributo + "aumentado");
-                    } else{
-                        alert("Erro ao atualizar atributo.");
-                    }
-                })
-                .catch(err =>{
-                    console.error("Erro:", err);
-                    alert("Erro na comunicação com o servidor.");
-                });
-
-
-                }
-
-        </script>
-
     </main>
     <footer>
 
