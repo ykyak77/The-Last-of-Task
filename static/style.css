@@ -416,6 +416,16 @@
     width: 40%;
 }
 
+
+.perfil-container2{
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto;
+    background-color:  rgba(0,0,0,0.6);
+    border-radius:  10px;
+    box-shadow: 0 0 15px black;
+}
+
 .per_left{
     float: left;
     text-align: left;
@@ -428,6 +438,7 @@
 }
 
 .atributo{
+
     display: flex;
     justify-content:  space-between;
     align-items: center;
@@ -457,6 +468,15 @@
     height: 3vw; 
     border-radius: 100%;
     border: 1px solid rgb(0, 0, 0);
+}
+
+.atributo button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .atributo button {

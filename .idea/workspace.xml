@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" afterPath="$PROJECT_DIR$/bdprojeto.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banco_de_dados/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banco_de_dados/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/betoneira.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/macarrao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/martelo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loja.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/questionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/questionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +60,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.TrabalhoFina.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TrabalhoFinal.executor&quot;: &quot;Run&quot;,
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;Python.models.executor&quot;: &quot;Run&quot;,
     &quot;Python.services.executor&quot;: &quot;Run&quot;,
@@ -62,7 +74,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="TrabalhoFina" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="TrabalhoFinal" type="PythonConfigurationType" factoryName="Python">
       <module name="TrabalhoFina" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,6 +83,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.13 (PythonProjectPractice)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
