@@ -1,0 +1,462 @@
+*{
+    margin: 0;
+}
+
+/*  LOGIN E CADASTRO*/
+#body_conta{
+    background-image: url(/static/imagens/fundo1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#body_conta #fundo{
+    background-color: rgba(35,31,26);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#body_conta #div_placa{
+    background-image: url(/static/imagens/placa.png);
+    background-size: 45vw 35vw;
+    background-repeat: no-repeat;
+    background-position: -1.5vw -0.8vw;
+    margin-top: 7vw;
+    margin-left: 19vw;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    float: left;
+    border-radius: 10%;
+    border: 1px solid rgb(54, 21, 5);
+    opacity: 0.99;
+    z-index: 1;
+    box-shadow: 0 0 120px rgba(0,0,0,0.5);
+}
+
+#body_conta #div_placa #f_conta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+#f_conta h1{
+    color: rgb(255, 255, 255);
+    margin: 2.5vw 0vw 1.5vw 0vw;
+    font-size: 3vw;
+}
+
+#f_conta div{
+    margin-top: 1.5vw;
+}
+
+#f_conta input{
+    width: 25vw;
+    height: 1.5vw;
+}
+
+#f_conta input::placeholder{
+    color: rgb(255, 238, 215);
+}
+
+#f_conta #username{
+    background-image: url(/static/imagens/perfil.png);
+    background-color: rgba(255, 182, 99, 0.4);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 40px;
+    height: 40px;
+    color: rgb(255, 238, 215);
+    border: 0.1vw solid rgb(0, 0, 0);
+    border-bottom: 0.1vw solid rgb(255, 238, 215);
+    border-radius: 5%;
+    outline: none;
+}
+
+#f_conta #email{
+    background-image: url(/static/imagens/email.png);
+    background-color: rgba(255, 182, 99, 0.4);
+    background-position: -10px center;
+    background-repeat: no-repeat;
+    background-size: 60px 40px;
+    padding-left: 40px;
+    height: 40px;
+    color: rgb(255, 238, 215);
+    border: 0.1vw solid rgb(0, 0, 0);
+    border-bottom: 0.1vw solid rgb(255, 238, 215);
+    border-radius: 5%;
+    outline: none;
+}
+
+#f_conta #senha{
+    background-image: url(/static/imagens/cadeado.png);
+    background-color: rgba(255, 182, 99, 0.4);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 40px;
+    height: 40px;
+    color: rgb(255, 238, 215);
+    border: 0.1vw solid rgb(0, 0, 0);
+    border-bottom: 0.1vw solid rgb(255, 238, 215);
+    border-radius: 5%;
+    outline: none;
+}
+
+#f_conta #senhaConfirma{
+    background-image: url(/static/imagens/cadeado.png);
+    background-color: rgba(255, 182, 99, 0.4);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 40px;
+    height: 40px;
+    color: rgb(255, 238, 215);
+    border: 0.1vw solid rgb(0, 0, 0);
+    border-bottom: 0.1vw solid rgb(255, 238, 215);
+    border-radius: 5%;
+    outline: none;
+}
+
+#f_conta button{
+    background-color: rgba(255, 182, 99, 0.4);
+    color: rgb(255, 255, 255);
+    font-size: 1.4vw;
+    margin: 2vw;
+    width: 25vw;
+    height: 2.5vw;
+}
+
+#f_conta a{
+    color: rgb(143, 205, 255);
+    text-decoration: none;
+}
+
+
+#div_placa div p{
+    color: rgb(255, 255, 255);
+    font-size: 1.1vw;
+    z-index: 10;
+    opacity: 1;
+}
+
+
+#suporte{
+    position: absolute;
+    background-image: url(/static/imagens/suporte.png);
+    background-size: 7vw 100%;
+    background-repeat: no-repeat;
+    margin-top: 25vw;
+    margin-left: 36vw;
+    width: 7%;
+    height: 51%;
+    z-index: -1;
+    border: 1px solid rgb(54, 21, 5);
+    box-shadow: 0 0 120px rgba(0,0,0,0.5);
+}
+
+/*  LOGIN E CADASTRO*/
+/* HEADER */
+
+#menu_bar{
+    padding: 2vw 0vw 2vw 5vw;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    background-image: url(/static/imagens/menu.png);
+    background-repeat: repeat;
+    background-size: 35% 100%;
+}
+
+#menu_bar2, #menu_bar3{
+    position: relative;
+    padding: 2vw 0vw 2vw 5vw;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+#menu_bar2{
+    margin-left: 30vw;
+}
+
+#menu_bar3{
+    margin-left: 57.93vw;
+}
+
+.titulo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-container h1 {
+    position: relative;
+    font-size: 50px;
+    z-index: 1;
+}
+
+.titulo-container .exit {
+    margin-left: 2vw;
+    background-color: black;
+    position: relative;
+    height: 5vw;
+    width: 10vw;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.cipo-decorativo1, .cipo-decorativo2{
+    position: absolute;
+    z-index: 2;
+    pointer-events: none; /* impede cliques sobre a imagem */
+}
+
+.cipo-decorativo1 {
+    top: -140px; /* ajuste conforme necessário */
+    left: -150px; /* ajuste conforme necessário */
+    width: 700px; /* ajuste proporcional à imagem */
+    opacity: 0.89;
+}
+.cipo-decorativo2 {
+    top: -50px; /* ajuste conforme necessário */
+    right: -208px;
+    width: 300px; /* ajuste proporcional à imagem */
+}
+
+#menu_bar #cipo1, #cipo2, #cipo3{
+    position:relative;
+}
+
+#menu_bar h3{
+    margin-left: 3vw;
+}
+
+/* HEADER */
+/* INDEX/TASK */
+
+#main_conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 98.5vw;
+    height: 100vw;
+}
+
+#main_conteiner #saldo{
+    background-color: rgba(35, 31, 26, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    padding: 0.5vw;
+    margin: 1vw 0vw 3vw 60vw;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 3vw 3vw;
+    font-size: 0.8vw;
+}
+
+#main_conteiner #d_tarefas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 110%;
+    margin: 0vw 10vw 15vw 10vw;
+}
+
+#main_conteiner #d_tarefas #ul_tarefas{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+#main_conteiner #d_tarefas h1{
+    background-color: rgb(94,91,92);
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 1vw;
+    margin: 1vw 1vw 3vw 1vw;
+    border-radius: 3vw 3vw;
+}
+
+#main_conteiner #d_tarefas #li_tarefas{
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.705);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 13.5vw;
+    height: 11vw;
+    margin: 1.8vw;
+    padding: 1vw 1vw 1vw 1vw;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 2vw 2vw;
+}
+
+#main_conteiner #d_tarefas #li_tarefas strong, span, button{
+    text-align: center;
+}
+
+
+/* INDEX/TASK */
+/* PERFIL/STATUS */
+#body_perfil{
+    background-image: url(/static/imagens/perfilFundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.perfil-container{
+    text-align: center;
+    max-width: 600px;
+    margin: 80px auto;
+    background-color:  rgba(0,0,0,0.6);
+    padding: 30px 30px 600px 30px;
+    border-radius:  10px;
+    box-shadow: 0 0 15px black;
+}
+
+.perfil-container2{
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto;
+    background-color:  rgba(0,0,0,0.6);
+    border-radius:  10px;
+    box-shadow: 0 0 15px black;
+}
+
+.per_left{
+    float: left;
+    height: 40%;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.per_rigth{
+    float: right;
+    height: 40%;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.atributo {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin: 25px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.atributo button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.atributo button:hover {
+  background-color: #777;
+}
+
+
+#body_questionario{
+    background-image: url(/static/imagens/perfilFundo.png);
+    background-size: cover;            /* Faz a imagem cobrir toda a tela */
+    background-position: center;       /* Centraliza a imagem */
+    background-repeat: no-repeat;      /* Evita repetição da imagem */
+    background-attachment: fixed;      /* Mantém a imagem fixa ao rolar a página */
+    height: 100vh;                     /* Garante que o corpo tenha altura da tela */
+    margin: 0;                         /* Remove margens padrão */
+    padding: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 25px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Espaçamento entre elementos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-questionario input,
+.form-questionario select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-top: 8px;
+}
+
+/* Botão */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Mensagens */
+.mensagens p {
+    color: #ffcc00;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+
+
+
+

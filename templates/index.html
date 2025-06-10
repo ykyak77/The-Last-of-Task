@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header id="menu_bar">
+        <div class="titulo-container">
+            <h1>The Last of Task</h1>
+            <img src="{{ url_for('static', filename='imagens/cipo2.png') }}" alt="folhagem" class="cipo-decorativo1">
+        </div>
+
+        <div id="menu_bar2">
+            <h3 id="menu-l-1"><a href="{{url_for('loja')}}">Loja</a></h3>
+            <h3 id="menu-l-2"><a href="{{url_for('status')}}">Perfil</a></h3>
+            <h3 id="menu-l-3"><a href="{{url_for('inventario')}}">Inventario</a></h3>
+            <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
+        </div>
+    </header>
+    <main id="main_conteiner">
+
+        <div id="saldo">
+            <h1>Total de pilulas: {{ pilulas_totais  }} 💊</h1>
+        </div>
+
+        <div id="d_tarefas">
+            <h1>Minhas Tarefas</h1>
+                <ul id="ul_tarefas">
+                    {% for tarefa in tarefas %}
+                        <li id="li_tarefas">
+                            <strong>{{ tarefa.titulo }}</strong> 
+                            <strong>| {{ tarefa.pilulas_recompensa }} pilulas |</strong>
+                            {% if tarefa.concluido %}
+                                <span style="color:green;">[Concluído]</span>
+                            {% else %}
+                                <form action="{{ url_for('concluirTarefa', task_id=tarefa.task_id) }}" method="post" style="display:inline;">
+                                    <button style="color:red;" type="submit">Finalizar Tarefa</button>
+                                </form>
+                            {% endif %}
+
+                        </li>
+                    {% else %}
+                        <h1>Por favor, reponda o formulario para que possamos oderecer a melhor rotina possivel para voce</h1>
+                        <h3><a href="{{url_for('coletarDados')}}">Coleta de dados</a></h3>
+
+                    {% endfor %}
+                </ul>
+
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+</html>

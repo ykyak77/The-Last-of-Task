@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="body_conta">
+
+    <div id="fundo"></div>
+
+    <div id="div_placa">
+        <form id="f_conta" action="{{ url_for('cadastrar')}}" method="post">
+            <h1>Cadastro</h1>
+
+            <div>
+                <input type="text" id="username" name="username" value="{{ username or '' }}" placeholder="Username">
+            </div>
+
+            <div>
+                <input type="text" id="email" name="email" value="{{ email or '' }}"  placeholder="E-mail">
+            </div>
+
+            <div>
+                <input type="password" id="senha" name="senha"  placeholder="Password">
+            </div>
+
+            <div>
+                <input type="password" id="senhaConfirma" name="senhaConfirma"  placeholder="Confirm Password">
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div>
+            <p>
+                <!--Cria uma variável temporária chamada "mensagens" que recebe as mensagens enviadas com flash() no backend #-->
+                {% with mensagens = get_flashed_messages() %}
+                    {% if mensagens %} <!-- # Verifica se existe pelo menos uma mensagem para exibir -->
+                        {% for msg in mensagens %}
+                            {{ msg }}
+                        {% endfor %}
+                        {% endif %}
+                {% endwith %}
+            </p>
+        </div>
+        
+    </div>
+
+
+
+    <div id="suporte"></div>
+    <div id="cipo"></div>
+
+</body>
+</html>

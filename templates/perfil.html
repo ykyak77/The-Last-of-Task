@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="body_perfil">
+
+
+    <header id="menu_bar">
+        <div class="titulo-container">
+            <a href="{{ url_for('menu')}}">
+                <img src="{{url_for('static', filename='imagens/exit.png')}}" alt="Voltar" class="exit" >
+            </a>
+            <img src="{{ url_for('static', filename='imagens/cipo2.png') }}" alt="folhagem" class="cipo-decorativo1">
+        </div>
+
+        <div id="menu_bar3">
+            <h3 id="menu-l-1"><a href="{{url_for('loja')}}">Loja</a></h3>
+            <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
+        </div>
+    </header>
+    <main>
+
+        <div class="perfil-container">
+            <h1>Perfil do Personagem</h1>
+
+            <div class="perfil-container2">
+                <div class="per_left">
+                    <div class="atributo">
+                        <span>Foco</span>
+
+                    </div>
+                    <div class="atributo">
+                        <span>Agilidade</span>
+
+                    </div>
+                    <div class="atributo">
+                        <span>Inteligência</span>
+
+                    </div>
+                    <div class="atributo">
+                        <span>Criatividade</span>
+
+                    </div>
+                    <div class="atributo">
+                        <span>Energia</span>
+
+                    </div>
+                </div>
+
+                <div class="per_rigth">
+                    <div class="atributo">
+                        <span>Foco</span>
+                        <button onclick="aumentar('foco')">+</button>
+                    </div>
+                    <div class="atributo">
+                        <span>Agilidade</span>
+                        <button onclick="aumentar('Agilidade')">+</button>
+                    </div>
+                    <div class="atributo">
+                        <span>Inteligência</span>
+                        <button onclick="aumentar('Inteligência')">+</button>
+                    </div>
+                    <div class="atributo">
+                        <span>Criatividade</span>
+                        <button onclick="aumentar('Criatividade')">+</button>
+                    </div>
+                    <div class="atributo">
+                        <span>Energia</span>
+                        <button onclick="aumentar('Energia')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function aumentar(atributo){
+                fetch("/atualizar_atributo",{
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({atributo: atributo})
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.sucesso){
+                        alert("Atributo " + atributo + "aumentado");
+                    } else{
+                        alert("Erro ao atualizar atributo.");
+                    }
+                })
+                .catch(err =>{
+                    console.error("Erro:", err);
+                    alert("Erro na comunicação com o servidor.");
+                });
+
+                }
+                </script>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+</html>
