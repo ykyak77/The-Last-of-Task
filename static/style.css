@@ -76,7 +76,11 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
+<<<<<<< HEAD
     padding-left: 40px;
+=======
+    padding-left: 40px; 
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -91,7 +95,11 @@
     background-position: -10px center;
     background-repeat: no-repeat;
     background-size: 60px 40px;
+<<<<<<< HEAD
     padding-left: 40px;
+=======
+    padding-left: 40px; 
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -106,7 +114,11 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
+<<<<<<< HEAD
     padding-left: 40px;
+=======
+    padding-left: 40px; 
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -121,7 +133,11 @@
     background-position: 10px center;
     background-repeat: no-repeat;
     background-size: 20px 20px;
+<<<<<<< HEAD
     padding-left: 40px;
+=======
+    padding-left: 40px; 
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     height: 40px;
     color: rgb(255, 238, 215);
     border: 0.1vw solid rgb(0, 0, 0);
@@ -198,7 +214,11 @@
 
 .titulo-container {
     position: relative;
+<<<<<<< HEAD
     display: inline-block;
+=======
+    display: inline-block; 
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
 }
 
 .titulo-container h1 {
@@ -318,10 +338,14 @@
 /* INDEX/TASK */
 /* PERFIL/STATUS */
 #body_perfil{
+<<<<<<< HEAD
     background-image: url(/static/imagens/perfilFundo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+=======
+    background-image: url(/static/imagens/fundoPerfil.jpg);
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     background-color: #1a1a1a;
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
@@ -329,6 +353,10 @@
 
 .perfil-container{
     text-align: center;
+<<<<<<< HEAD
+=======
+    margin-bottom: 30px;
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     max-width: 600px;
     margin: 80px auto;
     background-color:  rgba(0,0,0,0.6);
@@ -337,6 +365,7 @@
     box-shadow: 0 0 15px black;
 }
 
+<<<<<<< HEAD
 .perfil-container2{
     text-align: center;
     max-width: 600px;
@@ -346,6 +375,8 @@
     box-shadow: 0 0 15px black;
 }
 
+=======
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
 .per_left{
     float: left;
     height: 40%;
@@ -362,7 +393,11 @@
     margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .atributo {
+=======
+.atributo{
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     display: flex;
     justify-content:  space-between;
     align-items: center;
@@ -372,6 +407,7 @@
     border-radius: 5px;
 }
 
+<<<<<<< HEAD
 .atributo button {
     padding: 5px 10px;
     border: none;
@@ -460,3 +496,18 @@ button[type="submit"]:hover {
 
 
 
+=======
+.atributo button{
+padding: 5px 10px;
+border: none;
+background-color: #555;
+color: white;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.atributo button:hover{
+    background-color: #777;
+}
+
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3

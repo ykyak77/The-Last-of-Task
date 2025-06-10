@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
+<<<<<<< HEAD
+=======
+  <component name="Flask">
+    <option name="enabled" value="true" />
+  </component>
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
@@ -7,4 +13,15 @@
     <orderEntry type="jdk" jdkName="Python 3.13 (TrabalhoFina)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/templates" />
+      </list>
+    </option>
+  </component>
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
 </module>
