@@ -1,3 +1,72 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body id="body_questionario">
+
+    <div class="container">
+        <form action="{{ url_for('coletarDados') }}" method="post" class="form-questionario">
+            <h1>Questionário</h1>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="acorda">Hora que você acorda (0-23):</label>
+                <input type="number" id="acorda" name="acorda" min="0" max="23" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dorme">Hora que você dorme (0-23):</label>
+                <input type="number" id="dorme" name="dorme" min="0" max="23" required>
+            </div>
+
+            <div class="form-group">
+                <label>Principais objetivos (marque um ou mais):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="objetivo" value="reduzir estresse"> Reduzir estresse</label>
+                    <label><input type="checkbox" name="objetivo" value="melhorar sono"> Melhorar sono</label>
+                    <label><input type="checkbox" name="objetivo" value="ter mais energia"> Ter mais energia</label>
+                    <label><input type="checkbox" name="objetivo" value="parar de procrastinar"> Parar de procrastinar</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exercicio">Você pratica exercícios regularmente?</label>
+                <select id="exercicio" name="exercicio" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
+            </div>
+
+            <button type="submit">Gerar Rotina</button>
+
+            <div class="mensagens">
+                {% set mensagens = get_flashed_messages() %}
+                {% if mensagens %}
+                    {% for msg in mensagens %}
+                        <p>{{ msg }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</body>
+
+        </form>
+    </div>
+
+</body>
+</html>
+=======
 <form action="{{ url_for('coletarDados') }}" method="post">
 
     <label>Idade:
@@ -48,3 +117,4 @@
                 {% endfor %}
         {% endif %}
 </form>
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3

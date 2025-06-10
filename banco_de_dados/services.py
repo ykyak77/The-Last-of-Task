@@ -106,6 +106,11 @@ def criarItens():
         return  # Já existem itens, então não insere de novo
 
     itens = [
+<<<<<<< HEAD
+        ShopItens(item="martelo", nome="Martelo", descricao="MArtelo muito legal", preco_pilulas=150),
+        ShopItens(item="betoneira", nome="Betoneira", descricao="Betinho que bate massa", preco_pilulas=250),
+        ShopItens(item="macarrao", nome="Macarao", descricao="Comida Gostosa", preco_pilulas=50)
+=======
         ShopItens(item="longinus", nome="Lança de Longinus", descricao="Arma divina capaz de perfurar qualquer barreira, inclusive almas.", preco_pilulas=150),
         ShopItens(item="triforce", nome="Triforce", descricao="Artefato sagrado que concede desejos e poder.", preco_pilulas=250),
         ShopItens(item="excalibur", nome="Excalibur", descricao="Espada lendária empunhada apenas pelo verdadeiro rei.", preco_pilulas=50),
@@ -117,6 +122,7 @@ def criarItens():
         ShopItens(item="estus", nome="Estus Flask", descricao="Cura gradualmente a vida, essencial em combates longos.", preco_pilulas=50),
         ShopItens(item="red", nome="Poção Vermelha", descricao="Estus Flask", preco_pilulas=50),
         ShopItens(item="molotov", nome="Coquetel Molotov", descricao="Arma improvisada feita com garrafa, pano e álcool. Causa dano em área.", preco_pilulas=50)
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
     ]
 
     try:

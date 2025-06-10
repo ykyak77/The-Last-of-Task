@@ -26,7 +26,11 @@
             <table>
             {% for item in itens %}
                   <tr>
+<<<<<<< HEAD
+                    <td rowspan="2"><img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.item}}" width="100" height="100"></td>
+=======
                     <td rowspan="2"><img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.nome}}" width="100" height="100"></td>
+>>>>>>> 6f5035e74f6a583de827104b6602a6ed44646bb3
                     <td><b>{{item.nome}}</b></td>
                     <td>💊 {{item.preco_pilulas}}</td>
                   </tr>
