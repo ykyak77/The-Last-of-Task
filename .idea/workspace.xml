@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6a8e7e-8564-457d-b419-58ba9ffcaad8" name="Changes" comment="Logar e Cadastrar funcionando. Pagina principal exibe as tarefas e tem como conclui-las">
-      <change beforePath="$PROJECT_DIR$/.idea/TrabalhoFina.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrabalhoFina.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_de_dados/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/betoneira.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/macarrao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/martelo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inventario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inventario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loja.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/questionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/questionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" afterPath="$PROJECT_DIR$/bdprojeto.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
