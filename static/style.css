@@ -131,6 +131,9 @@
 }
 
 #f_conta button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(255, 182, 99, 0.4);
     color: rgb(255, 255, 255);
     font-size: 1.4vw;
@@ -314,15 +317,67 @@
     text-align: center;
 }
 
-
 /* INDEX/TASK */
 /* PERFIL/STATUS */
+
 #body_perfil{
-    background-image: url(/static/imagens/fundoPerfil.jpg);
+    background-image: url(/static/imagens/perfilFundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #1a1a1a;
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
 }
+
+.div_total{
+    position: fixed;
+}
+
+/* Violao (obs: eu sendo maluco) */
+.div_violao{
+    background-color: rgba(37, 14, 0, 0.301);
+    position: absolute;
+    margin-top: 3vw;
+    border: 5x solid rgb(0, 0, 0);
+    z-index: -1;
+}
+
+.div_violao span{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.397);
+    height: 0.3vw;
+    width: 100vw;  
+}
+
+.fio_1{
+    margin-top: 6.24em; /* 9.1vw */
+}
+
+.fio_2{
+    margin-top: 5.39em; /* 7.7vw */
+}
+
+.fio_3{
+    margin-top: 5.39em; /* 7.7vw */
+    margin-bottom: 5.39em;
+}
+
+.cicada{
+    position: absolute;
+    bottom: -1vw;
+    right: -1vw;
+    background-image: url(/static/imagens/cicada.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: 20vw;
+    transform: rotate(90deg);
+    opacity: 0.4;
+    z-index: -2;
+}
+
+/* Violao (obs: eu sendo maluco) */
 
 .perfil-container{
     text-align: center;
@@ -330,25 +385,46 @@
     max-width: 600px;
     margin: 80px auto;
     background-color:  rgba(0,0,0,0.6);
-    padding: 30px 30px 600px 30px;
+    padding: 3vw 3vw 1vw 3vw;
     border-radius:  10px;
     box-shadow: 0 0 15px black;
+    z-index: 1;
+}
+
+.perfil-container h1{
+    text-shadow: 0 0 15px black;
+}
+
+.status{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.per_center{
+    float: right;
+    text-align: right;
+    height: 20%;
+    width: 20%;
+}
+
+.per_left, .per_rigth{
+    display: flex;
+    align-items: center;
+    height: 40%;
+    width: 40%;
 }
 
 .per_left{
     float: left;
-    height: 40%;
-    width: 40%;
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: left;
 }
 
 .per_rigth{
+    justify-content: end;
     float: right;
-    height: 40%;
-    width: 40%;
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: right;
 }
 
 .atributo{
@@ -356,21 +432,112 @@
     justify-content:  space-between;
     align-items: center;
     margin: 25px 0;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     background-color: #333;
     border-radius: 5px;
+    z-index: 2;
 }
 
-.atributo button{
-padding: 5px 10px;
-border: none;
-background-color: #555;
-color: white;
-border-radius: 4px;
-cursor: pointer;
+.img_atributo{
+    height: 3vw;
+    width: 3vw;
 }
 
-.atributo button:hover{
-    background-color: #777;
+.atributo span{
+    padding: 10px 15px 10px 5px;
+}
+
+.img_money{
+    background-image: url(/static/imagens/money.png);
+    background-position: 0vw 0vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 3vw;
+    height: 3vw; 
+    border-radius: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.atributo button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.atributo button:hover {
+  background-color: #777;
+}
+
+#body_questionario{
+    background-image: url(/static/imagens/perfilFundo.png);
+    background-size: cover;            /* Faz a imagem cobrir toda a tela */
+    background-position: center;       /* Centraliza a imagem */
+    background-repeat: no-repeat;      /* Evita repetição da imagem */
+    background-attachment: fixed;      /* Mantém a imagem fixa ao rolar a página */
+    height: 100vh;                     /* Garante que o corpo tenha altura da tela */
+    margin: 0;                         /* Remove margens padrão */
+    padding: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 25px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Espaçamento entre elementos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-questionario input,
+.form-questionario select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-top: 8px;
+}
+
+/* Botão */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Mensagens */
+.mensagens p {
+    color: #ffcc00;
+    margin-top: 15px;
+    text-align: center;
 }
 

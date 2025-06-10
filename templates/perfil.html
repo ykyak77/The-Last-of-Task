@@ -24,57 +24,114 @@
     </header>
     <main>
 
+
+        <div class="div_violao">
+            <span class="fio_1"></span>
+            <span class="fio_2"></span>
+            <span class="fio_2"></span>
+            <span class="fio_2"></span>
+            <span class="fio_3"></span>
+            
+            <div class="cicada"></div>
+
+        </div>
+
         <div class="perfil-container">
             <h1>Perfil do Personagem</h1>
 
-            <div class="perfil-container2">
-                <div class="per_left">
-                    <div class="atributo">
+            <div class="status">
+                <div class="atributo">
+                    <div class="per_left">
+                        <img src="{{ url_for('static', filename='imagens/status/target.png') }}" alt="" class="img_atributo">
                         <span>Foco</span>
-
                     </div>
-                    <div class="atributo">
-                        <span>Agilidade</span>
-
+                    
+                    <div class="per_center">
+                        <span>LvL</span>
                     </div>
-                    <div class="atributo">
-                        <span>Inteligência</span>
 
-                    </div>
-                    <div class="atributo">
-                        <span>Criatividade</span>
+                    <div class="per_rigth">
+                        <div class="img_money"></div>
+                        <span>150</span>
 
-                    </div>
-                    <div class="atributo">
-                        <span>Energia</span>
-
+                        <button onclick="aumentar('foco')">+</button>
                     </div>
                 </div>
 
-                <div class="per_rigth">
-                    <div class="atributo">
-                        <span>Foco</span>
+                <div class="atributo">
+                    <div class="per_left">
+                        <img src="{{ url_for('static', filename='imagens/status/run.png') }}" alt="" class="img_atributo">
+                        <span>Agilidade</span>
+                    </div>
+                    
+                    <div class="per_center">
+                        <span>LvL</span>
+                    </div>
+
+                    <div class="per_rigth">
+                        <div class="img_money"></div>
+                        <span>150</span>
+
                         <button onclick="aumentar('foco')">+</button>
                     </div>
-                    <div class="atributo">
-                        <span>Agilidade</span>
-                        <button onclick="aumentar('Agilidade')">+</button>
+                </div>
+                
+                <div class="atributo">
+                    <div class="per_left">
+                        <img src="{{ url_for('static', filename='imagens/status/brain.png') }}" alt="" class="img_atributo">
+                        <span>Inteligencia</span>
                     </div>
-                    <div class="atributo">
-                        <span>Inteligência</span>
-                        <button onclick="aumentar('Inteligência')">+</button>
+                    
+                    <div class="per_center">
+                        <span>LvL</span>
                     </div>
-                    <div class="atributo">
+
+                    <div class="per_rigth">
+                        <div class="img_money"></div>
+                        <span>150</span>
+
+                        <button onclick="aumentar('foco')">+</button>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <div class="per_left">
+                        <img src="{{ url_for('static', filename='imagens/status/lamp.png') }}" alt="" class="img_atributo">
                         <span>Criatividade</span>
-                        <button onclick="aumentar('Criatividade')">+</button>
                     </div>
-                    <div class="atributo">
+                    
+                    <div class="per_center">
+                        <span>LvL</span>
+                    </div>
+
+                    <div class="per_rigth">
+                        <div class="img_money"></div>
+                        <span>150</span>
+
+                        <button onclick="aumentar('foco')">+</button>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <div class="per_left">
+                        <img src="{{ url_for('static', filename='imagens/status/lightning.png') }}" alt="" class="img_atributo">
                         <span>Energia</span>
-                        <button onclick="aumentar('Energia')">+</button>
+                    </div>
+                    
+                    <div class="per_center">
+                        <span>LvL</span>
+                    </div>
+
+                    <div class="per_rigth">
+                        <div class="img_money"></div>
+                        <span>150</span>
+
+                        <button onclick="aumentar('foco')">+</button>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <script>
             function aumentar(atributo){
