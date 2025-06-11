@@ -38,6 +38,7 @@
 
         <div class="perfil-container">
             <h1>Perfil do Personagem</h1>
+            <p>{{user.pilulas}} MOEDAS</p>
 
             <div class="status">
                 <div class="atributo">
@@ -47,14 +48,17 @@
                     </div>
                     
                     <div class="per_center">
-                        <span>LvL</span>
+                        <span>{{habilidade.foco}} LVL</span>
                     </div>
 
                     <div class="per_rigth">
                         <div class="img_money"></div>
-                        <span>150</span>
+                        <span>{{habilidade.preco}}</span>
+                    <form method="post">
+                        <input type="hidden" name="atributo" value="foco">
+                        <button type="submit">+</button>
+                    </form>
 
-                        <button onclick="aumentar('foco')">+</button>
                     </div>
                 </div>
 
@@ -65,14 +69,17 @@
                     </div>
                     
                     <div class="per_center">
-                        <span>LvL</span>
+                        <span>{{habilidade.agilidade}} LVL</span>
                     </div>
 
                     <div class="per_rigth">
                         <div class="img_money"></div>
-                        <span>150</span>
+                        <span>{{habilidade.preco}}</span>
 
-                        <button onclick="aumentar('foco')">+</button>
+                    <form method="post">
+                        <input type="hidden" name="atributo" value="agilidade">
+                        <button type="submit">+</button>
+                    </form>
                     </div>
                 </div>
                 
@@ -83,14 +90,17 @@
                     </div>
                     
                     <div class="per_center">
-                        <span>LvL</span>
+                        <span>{{habilidade.inteligencia}} LvL</span>
                     </div>
 
                     <div class="per_rigth">
                         <div class="img_money"></div>
-                        <span>150</span>
+                        <span>{{habilidade.preco}}</span>
 
-                        <button onclick="aumentar('foco')">+</button>
+                    <form method="post">
+                        <input type="hidden" name="atributo" value="inteligencia">
+                        <button type="submit">+</button>
+                    </form>
                     </div>
                 </div>
 
@@ -101,14 +111,17 @@
                     </div>
                     
                     <div class="per_center">
-                        <span>LvL</span>
+                        <span>{{habilidade.criatividade}} LVL</span>
                     </div>
 
                     <div class="per_rigth">
                         <div class="img_money"></div>
-                        <span>150</span>
+                        <span>{{habilidade.preco}}</span>
 
-                        <button onclick="aumentar('foco')">+</button>
+                    <form method="post">
+                        <input type="hidden" name="atributo" value="criatividade">
+                        <button type="submit">+</button>
+                    </form>
                     </div>
                 </div>
 
@@ -119,45 +132,21 @@
                     </div>
                     
                     <div class="per_center">
-                        <span>LvL</span>
+                        <span>{{habilidade.energia}} LVL</span>
                     </div>
 
                     <div class="per_rigth">
                         <div class="img_money"></div>
-                        <span>150</span>
+                        <span>{{habilidade.preco}}</span>
 
-                        <button onclick="aumentar('foco')">+</button>
+                    <form method="post">
+                        <input type="hidden" name="atributo" value="energia">
+                        <button type="submit">+</button>
+                    </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        <script>
-            function aumentar(atributo){
-                fetch("/atualizar_atributo",{
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({atributo: atributo})
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.sucesso){
-                        alert("Atributo " + atributo + "aumentado");
-                    } else{
-                        alert("Erro ao atualizar atributo.");
-                    }
-                })
-                .catch(err =>{
-                    console.error("Erro:", err);
-                    alert("Erro na comunicação com o servidor.");
-                });
-
-
-                }
-
-        </script>
     </main>
     <footer>
 

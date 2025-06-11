@@ -4,7 +4,7 @@ from datetime import datetime
 
 from sqlalchemy.testing.suite.test_reflection import users
 from werkzeug.security import generate_password_hash, check_password_hash
-from banco_de_dados.models import engine, Base, User, Task, UserTasks, ShopItens, Inventario
+from banco_de_dados.models import engine, Base, User, Task, UserTasks, ShopItens, Inventario, Personagem
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import IntegrityError
 from functools import wraps
@@ -180,10 +180,50 @@ def coletarDados():
 
 
 
-@app.route('/perfil')
+@app.route('/perfil', methods=['GET', 'POST'])
 @login_required
 def status():
-    return render_template('perfil.html')
+    db_session = DB_Session()
+    user_id = session['user_id']
+
+    try:
+        personagem = db_session.query(Personagem).filter_by(user_id=user_id).first()
+        user = db_session.query(User).get(user_id)
+
+        if request.method == 'POST':
+            atributo = request.form.get('atributo')
+            if personagem and user.pilulas>=personagem.preco:
+                atributos = ['foco', 'agilidade', 'inteligencia', 'criatividade', 'energia']
+                if atributo in atributos:
+                    setattr(personagem, atributo, getattr(personagem, atributo) + 1)
+
+                    user.pilulas -= personagem.preco
+
+                    db_session.commit()
+                else:
+                    print('ERRO no atributo passsado')
+            else:
+                print('Sem pilulas ou Erro ao encontrar personagem')
+
+        user_dados = {'pilulas' : user.pilulas}
+        personagem_dados = {
+            'foco': personagem.foco,
+            'agilidade': personagem.agilidade,
+            'inteligencia': personagem.inteligencia,
+            'criatividade': personagem.criatividade,
+            'energia': personagem.energia,
+            'preco': personagem.preco
+        }
+
+    except Exception as e:
+        db_session.rollback()
+        flash(f"Erro ao carregar perfil: {e}")
+        return render_template("perfil.html")
+    finally:
+        db_session.close()
+
+    return render_template('perfil.html', habilidade=personagem_dados, user=user_dados)
+
 
 @app.route('/loja')
 @login_required
@@ -250,4 +290,5 @@ def inventario():
 
 if __name__ == '__main__':
     iniciar_banco()
+    app.run(debug=True)
     app.run(debug=True)

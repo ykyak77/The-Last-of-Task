@@ -8,16 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/banco_de_dados/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_de_dados/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/banco_de_dados/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/betoneira.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/macarrao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imagens/imgItens/martelo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bdprojeto.db" beforeDir="false" afterPath="$PROJECT_DIR$/bdprojeto.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loja.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/questionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/questionario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
