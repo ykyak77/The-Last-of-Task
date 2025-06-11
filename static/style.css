@@ -147,14 +147,12 @@
     text-decoration: none;
 }
 
-
 #div_placa div p{
     color: rgb(255, 255, 255);
     font-size: 1.1vw;
     z-index: 10;
     opacity: 1;
 }
-
 
 #suporte{
     position: absolute;
@@ -169,10 +167,57 @@
     border: 1px solid rgb(54, 21, 5);
     box-shadow: 0 0 120px rgba(0,0,0,0.5);
 }
-
 /*  LOGIN E CADASTRO*/
-/* HEADER */
 
+/* QUESTIONARIO */
+#body_questionario{
+    background-image: url(/static/imagens/perfilFundo.png);
+    background-size: cover;            /* Faz a imagem cobrir toda a tela */
+    background-position: center;       /* Centraliza a imagem */
+    background-repeat: no-repeat;      /* Evita repetição da imagem */
+    background-attachment: fixed;      /* Mantém a imagem fixa ao rolar a página */
+    height: 100vh;                     /* Garante que o corpo tenha altura da tela */
+    margin: 0;                         /* Remove margens padrão */
+    padding: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 25px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Espaçamento entre elementos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-questionario input,
+.form-questionario select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-top: 8px;
+}
+/* QUESTIONARIO */
+
+/* HEADER */
 #menu_bar{
     padding: 2vw 0vw 2vw 5vw;
     display: flex;
@@ -245,10 +290,9 @@
 #menu_bar h3{
     margin-left: 3vw;
 }
-
 /* HEADER */
-/* INDEX/TASK */
 
+/* INDEX/TASK */
 #main_conteiner{
     display: flex;
     flex-direction: column;
@@ -317,9 +361,12 @@
     text-align: center;
 }
 
+#main_conteiner #d_tarefas #li_tarefas button{
+    padding: 0.3vw;
+}
 /* INDEX/TASK */
-/* PERFIL/STATUS */
 
+/* PERFIL/STATUS */
 #body_perfil{
     background-image: url(/static/imagens/perfilFundo.png);
     background-size: cover;
@@ -376,7 +423,6 @@
     opacity: 0.4;
     z-index: -2;
 }
-
 /* Violao (obs: eu sendo maluco) */
 
 .perfil-container{
@@ -414,16 +460,6 @@
     align-items: center;
     height: 40%;
     width: 40%;
-}
-
-
-.perfil-container2{
-    text-align: center;
-    max-width: 600px;
-    margin: 10px auto;
-    background-color:  rgba(0,0,0,0.6);
-    border-radius:  10px;
-    box-shadow: 0 0 15px black;
 }
 
 .per_left{
@@ -491,63 +527,112 @@
 .atributo button:hover {
   background-color: #777;
 }
+/* PERFIL/STATUS */
 
-#body_questionario{
-    background-image: url(/static/imagens/perfilFundo.png);
-    background-size: cover;            /* Faz a imagem cobrir toda a tela */
-    background-position: center;       /* Centraliza a imagem */
-    background-repeat: no-repeat;      /* Evita repetição da imagem */
-    background-attachment: fixed;      /* Mantém a imagem fixa ao rolar a página */
-    height: 100vh;                     /* Garante que o corpo tenha altura da tela */
-    margin: 0;                         /* Remove margens padrão */
-    padding: 0;
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
-    padding: 40px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 450px;
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 25px auto 0 auto;
+/* IVENTARIO */
+#main_conteiner_i{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    width: 98.5vw;
+}
+
+.inventario{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    background: radial-gradient(circle, rgb(15, 28, 51, 0.9) 40%, rgba(29, 60, 99, 0.85) 80%);
+    border: 1px solid #2f4365;
+    border-radius: 1vw;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.226);
+    padding: 15px;
+    margin: 3vw 1vw 3vw 1vw;
+    width: 70vw;
+    z-index: 3;
 }
 
-/* Espaçamento entre elementos do formulário */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-questionario input,
-.form-questionario select {
+.inventario .i_titulo{
+    display: flex;
+    justify-content: center;
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 8px;
+    margin: 3vw 0 3vw 0vw;
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
 }
 
-.checkbox-group label {
-    display: block;
-    margin-top: 8px;
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgb(15, 28, 51, 0.9) 40%, rgba(29, 60, 99, 0.85) 80%);
+    border: 1px solid #2f4365;
+    border-radius: 1vw;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.226);
+    padding: 15px;
+    margin: 3vw 1.5vw 2vw 1.5vw;
+    width: 7vw;
+    height: 7vw;
 }
+
+.item .i_img{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 1vw;
+}
+
+.descricao{
+    display: none;
+    position: fixed;
+    top: 20vw;
+    left: 35vw;
+    width: 30vw;
+    height: 10vw;
+    background: radial-gradient(circle, rgb(15, 28, 51, 0.9) 40%, rgba(29, 60, 99, 0.85) 80%);
+    border: 1px solid #2f4365;
+    border-radius: 1vw;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.226);
+    box-sizing: border-box;
+    padding: 15px;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+}
+
+.descricao b{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.descricao .i_p1{
+    text-align: left;
+}
+
+.descricao .i_p2{
+    text-align: end;
+}
+
+.item:hover .descricao {
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.void{
+
+}
+
+/* INVENTARIO */
 
 /* Botão */
 button[type="submit"] {
     width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    border-radius: 2vw;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.4vw;
 }
 
 button[type="submit"]:hover {
