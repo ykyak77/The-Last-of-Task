@@ -6,8 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-
+<body id="body_index">
     <header id="menu_bar">
         <div class="titulo-container">
             <h1>The Last of Task</h1>
@@ -24,7 +23,8 @@
     <main id="main_conteiner">
 
         <div id="saldo">
-            <h1>Total de pilulas: {{ pilulas_totais  }} 💊</h1>
+            <h1>Total de Dracma: {{ pilulas_totais  }}</h1>
+            <div class="img_money"></div>
         </div>
 
         <div id="d_tarefas">
@@ -33,7 +33,7 @@
                     {% for tarefa in tarefas %}
                         <li id="li_tarefas">
                             <strong>{{ tarefa.titulo }}</strong> 
-                            <strong>| {{ tarefa.pilulas_recompensa }} pilulas |</strong>
+                            <strong>| {{ tarefa.pilulas_recompensa }} Dracmas |</strong>
                             {% if tarefa.concluido %}
                                 <span style="color:green;">[Concluído]</span>
                             {% else %}
