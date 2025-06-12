@@ -106,17 +106,17 @@ def criarItens():
         return  # Já existem itens, então não insere de novo
 
     itens = [
-        ShopItens(item="longinus", nome="Lança de Longinus", descricao="Arma divina capaz de perfurar qualquer barreira, inclusive almas.", preco_pilulas=150),
-        ShopItens(item="triforce", nome="Triforce", descricao="Artefato sagrado que concede desejos e poder.", preco_pilulas=250),
-        ShopItens(item="excalibur", nome="Excalibur", descricao="Espada lendária empunhada apenas pelo verdadeiro rei.", preco_pilulas=50),
-        ShopItens(item="ocarina", nome="Ocarina do Tempo", descricao="Instrumento mágico que controla o tempo.", preco_pilulas=50),
-        ShopItens(item="master_sword", nome="Master Sword", descricao="A lendária lâmina capaz de selar o mal.", preco_pilulas=50),
-        ShopItens(item="kunai", nome="Kunai Explosiva", descricao="Arma ninja com selo explosivo.", preco_pilulas=50),
-        ShopItens(item="nevoa", nome="Faca da Névoa", descricao="Arma silenciosa que confunde e cega inimigos.", preco_pilulas=50),
-        ShopItens(item="samehada", nome="Samehada", descricao="Lâmina viva que absorve chakra.", preco_pilulas=50),
-        ShopItens(item="estus", nome="Estus Flask", descricao="Cura gradualmente a vida, essencial em combates longos.", preco_pilulas=50),
-        ShopItens(item="red", nome="Poção Vermelha", descricao="Estus Flask", preco_pilulas=50),
-        ShopItens(item="molotov", nome="Coquetel Molotov", descricao="Arma improvisada feita com garrafa, pano e álcool. Causa dano em área.", preco_pilulas=50)
+        ShopItens(item="longinus", nome="Lança de Longinus", descricao="Arma divina capaz de perfurar qualquer barreira, inclusive almas.", preco_pilulas=300),
+        ShopItens(item="triforce", nome="Triforce", descricao="Artefato sagrado que concede desejos e poder.", preco_pilulas=200),
+        ShopItens(item="excalibur", nome="Excalibur", descricao="Espada lendária empunhada apenas pelo verdadeiro rei.", preco_pilulas=150),
+        ShopItens(item="ocarina", nome="Ocarina do Tempo", descricao="Instrumento mágico que controla o tempo.", preco_pilulas=100),
+        ShopItens(item="master_sword", nome="Master Sword", descricao="A lendária lâmina capaz de selar o mal.", preco_pilulas=75),
+        ShopItens(item="kunai", nome="Kunai Explosiva", descricao="Arma ninja com selo explosivo.", preco_pilulas=45),
+        ShopItens(item="nevoa", nome="Faca da Névoa", descricao="Arma silenciosa que confunde e cega inimigos.", preco_pilulas=70),
+        ShopItens(item="samehada", nome="Samehada", descricao="Lâmina viva que absorve chakra.", preco_pilulas=125),
+        ShopItens(item="estus", nome="Estus Flask", descricao="Cura gradualmente a vida, essencial em combates longos.", preco_pilulas=100),
+        ShopItens(item="red", nome="Poção Vermelha", descricao="Poção de cura gradual", preco_pilulas=25),
+        ShopItens(item="molotov", nome="Coquetel Molotov", descricao="Arma improvisada feita com garrafa, pano e álcool. Causa dano em área.", preco_pilulas=15)
     ]
 
     try:
