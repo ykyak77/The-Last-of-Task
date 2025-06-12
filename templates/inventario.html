@@ -17,8 +17,8 @@
         </div>
 
         <div id="menu_bar3">
-            <h3 id="menu-l-1"><a href="{{url_for('loja')}}">Loja</a></h3>
-            <h3 id="menu-l-2"><a href="{{url_for('status')}}">Perfil</a></h3>
+            <h3><a class="menu_a" href="{{url_for('loja')}}">Loja</a></h3>
+            <h3><a class="menu_a" href="{{url_for('status')}}">Perfil</a></h3>
             <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
         </div>
     </header>
@@ -41,7 +41,6 @@
                     </div>
                 </div>   
             {% else %}
-                <hr>
                 <div class="void">                    
                     <h1>Inventário vazio</h1>
                     <h3><a href="{{url_for('loja')}}">Ir para a loja</a></h3>                    
