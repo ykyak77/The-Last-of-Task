@@ -35,10 +35,10 @@
                             <strong>{{ tarefa.titulo }}</strong> 
                             <strong>| {{ tarefa.pilulas_recompensa }} Dracmas |</strong>
                             {% if tarefa.concluido %}
-                                <span style="color:green;">[Concluído]</span>
+                                <span>[Concluído]</span>
                             {% else %}
                                 <form action="{{ url_for('concluirTarefa', task_id=tarefa.task_id) }}" method="post" style="display:inline;">
-                                    <button style="color:red;" type="submit">Finalizar Tarefa</button>
+                                    <button class="b_tarefas" type="submit">Finalizar Tarefa</button>
                                 </form>
                             {% endif %}
 

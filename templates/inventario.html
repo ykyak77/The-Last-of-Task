@@ -27,8 +27,9 @@
 
          <div class="inventario">
             <div class="i_titulo">
-                <h1>Inventario</h1>
+                <h1>Inventário</h1>
             </div>
+            <hr>
             {% for item in itens %} 
                 <div class="item">                    
                     <img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.item}}" class="i_img">            
@@ -40,9 +41,10 @@
                     </div>
                 </div>   
             {% else %}
+                <hr>
                 <div class="void">                    
-                        <h1>Inventário vazio</h1>
-                        <h3><a href="{{url_for('loja')}}">Ir para a loja</a></h3>                    
+                    <h1>Inventário vazio</h1>
+                    <h3><a href="{{url_for('loja')}}">Ir para a loja</a></h3>                    
                 </div>
             {% endfor %}
         </div>

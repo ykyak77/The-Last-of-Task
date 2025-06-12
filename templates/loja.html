@@ -1,60 +1,89 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Loja</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
 
-    <header id="menu_bar">
-        <div class="titulo-container">
-            <a href="{{ url_for('menu')}}">
-                <img src="{{url_for('static', filename='imagens/exit.png')}}" alt="Voltar" class="exit" >
-            </a>
-            <img src="{{ url_for('static', filename='imagens/cipo2.png') }}" alt="folhagem" class="cipo-decorativo1">
+<body id="body_loja">
+
+  <header id="menu_bar">
+    <div class="titulo-container">
+      <a href="{{ url_for('menu')}}">
+        <img src="{{url_for('static', filename='imagens/exit.png')}}" alt="Voltar" class="exit">
+      </a>
+      <img src="{{ url_for('static', filename='imagens/cipo2.png') }}" alt="folhagem" class="cipo-decorativo1">
+    </div>
+
+    <div id="menu_bar3">
+      <h3 id="menu-l-2"><a href="{{url_for('status')}}">Perfil</a></h3>
+      <h3 id="menu-l-3"><a href="{{url_for('inventario')}}">Inventario</a></h3>
+      <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
+    </div>
+  </header>
+
+  <main id="main_conteiner">
+
+    <div id="saldo2">
+      <h1>Total de Dracma: {{user.pilulas}}</h1>
+      <div class="img_money"></div>
+    </div>
+
+    <div class="div_corda">
+      <span class="corda_1"></span>
+      <span class="corda_2"></span>
+      <span class="corda_3"></span>           
+    </div>
+
+    <div id="loja-container">
+        {% for item in itens %}
+
+        <div id="item">
+          <div id="div_1">
+            <div id="img_item">
+              <img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}"
+              alt="{{item.item}}">
+            </div>
+          </div>
+
+          <div id="div_2">          
+            <b>{{item.nome}}</b>
+            <span>{{item.descricao}}</span>
+          </div>
+
+          <div id="div_3">
+
+            {% if user.pilulas >= item.preco_pilulas %}
+            <div id="top">              
+              <b>{{item.preco_pilulas}}</b>
+              <div class="img_money"></div>
+            </div> 
+
+            <form class="f_loja" action="{{ url_for('comprarItem', item_id=item.item_id) }}" method="post">
+              <button type="submit">Comprar</button>
+            </form>
+
+            {% else %}
+              <span class="s_money">Dracmas Insuficientes</span>
+            {% endif %}
+          </div>
         </div>
 
-        <div id="menu_bar3">
-            <h3 id="menu-l-2"><a href="{{url_for('status')}}">Perfil</a></h3>
-            <h3 id="menu-l-3"><a href="{{url_for('inventario')}}">Inventario</a></h3>
-            <img src="{{ url_for('static', filename='imagens/cipo1.png') }}" alt="folhagem" class="cipo-decorativo2">
+        {% else %}
+        <div id="void2">
+          <h1>Lojas vazia, sem itens disponiveis a venda. Aguarde os proximos lançamentos.</h1>
         </div>
-    </header>
-    <main><br><br><br><br><br><br><br>
-         <div>
-             <h1>{{user.pilulas}} 💊</h1>
-            <table>
-            {% for item in itens %}
-                  <tr>
+        {% endfor %}
+    </div>
+  </main>
 
-                    <td rowspan="2"><img src="{{ url_for('static', filename='imagens/imgItens/' ~ item.item~'.png') }}" alt="{{item.item}}" width="100" height="100"></td>
+  <footer>
 
-                    <td><b>{{item.nome}}</b></td>
-                    <td>💊 {{item.preco_pilulas}}</td>
-                  </tr>
-                  <tr>
-                    <td>{{item.descricao}}</td>
-                      {% if user.pilulas >= item.preco_pilulas %}
-                      <form action="{{ url_for('comprarItem', item_id=item.item_id) }}" method="post">
-                        <td><button type="submit">Comprar</button></td>
-                      </form>
-                      {% else %}
-                        <td><span style="color:red;">[Pílulas Insuficientes]</span></td>
-                      {% endif %}
-                  </tr>
-
-                {% else %}
-                <h1>Lojas vazia, sem itens disponiveis a venda. Aguarde os proximos lançamentos</h1>
-
-            {% endfor %}
-            </table>
-        </div>
-    </main>
-    <footer>
-
-    </footer>
+  </footer>
 
 </body>
+
 </html>
